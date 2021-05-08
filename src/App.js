@@ -2,6 +2,7 @@ import { Admin, Resource } from "react-admin";
 import jsonServerProvider from "ra-data-json-server";
 import { UserList } from "./components/users";
 import { PostList, PostCreate, PostEdit } from "./components/posts";
+import authProvider from "./auth/authProvider";
 import Dashboard from "./components/Dashboard";
 import PostIcon from "@material-ui/icons/Book";
 import UserIcon from "@material-ui/icons/Group";
@@ -12,6 +13,7 @@ const App = () => {
   return (
     <Admin
       dataProvider={dataProvider}
+      authProvider={authProvider}
       dashboard={Dashboard}
     >
       <Resource
