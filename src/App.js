@@ -1,8 +1,8 @@
-import { Admin, Resource } from 'react-admin';
-import jsonServerProvider from 'ra-data-json-server';
-import { UserList } from './components/users';
+import { Admin, Resource } from "react-admin";
+import jsonServerProvider from "ra-data-json-server";
+import { UserList } from "./components/users";
 
-const dataProvider = jsonServerProvider('https://jsonplaceholder.typicode.com');
+const dataProvider = jsonServerProvider("https://jsonplaceholder.typicode.com");
 
 const App = () => {
   return (
