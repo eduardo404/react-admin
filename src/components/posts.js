@@ -9,7 +9,8 @@ import {
   SimpleForm,
   ReferenceInput,
   SelectInput,
-  TextInput
+  TextInput,
+  Filter
 } from "react-admin";
 
 const PostTitle = ({ record }) => {
@@ -20,8 +21,17 @@ const PostTitle = ({ record }) => {
   );
 };
 
+const PostFilter = props => (
+  <Filter {...props}>
+    <TextInput label="Search" source="q" alwaysOn />
+    <ReferenceInput label="User" source="userId" reference="users" allowEmpty>
+      <SelectInput optionText="name" />
+    </ReferenceInput>
+  </Filter>
+);
+
 export const PostList = props => (
-  <List {...props}>
+  <List filters={<PostFilter />} {...props}>
     <Datagrid rowClick="toggleSelection">
     <TextField source="id" />
       <ReferenceField source="userId" reference="users">
